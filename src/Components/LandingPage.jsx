@@ -5,7 +5,7 @@ import { ForumContext } from "../Context/FormContext";
 import Post from "./Post";
 import { SideBar } from "./SideBar";
 
-import "../Styles/landingpage.css"
+import "../Styles/landingpage.css";
 
 export const LandingPage = () => {
   const { forumData } = useContext(ForumContext);
@@ -14,38 +14,46 @@ export const LandingPage = () => {
 
   const handleSortChange = (event) => {
     setSortOption(event.target.value);
-    setShowSort(!showSort);
-    console.log(sortOption);
+    setShowSort(true);
   };
 
   const sortedPosts = [...forumData.posts];
   if (sortOption === "latest") {
-    sortedPosts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    sortedPosts.sort((a, b) => b.upvotes - a.upvotes);
   } else if (sortOption === "upvoted") {
     sortedPosts.sort((a, b) => b.upvotes - a.upvotes);
   }
 
   return (
-    <div className="container">
-      <div className="sidebar">
-        <SideBar />
-      </div>
-      <div className="posts">
-       <h1>Welcome to Forum App</h1>
-        {console.log(sortedPosts)}
-        {showSort &&
-          sortedPosts.map((post) => <Post key={post.postId} post={post} />)}
-      </div>
-      <div className="sorting-options">
-        <label htmlFor="sortOption">Sort By: </label>
-        <select
-          id="sortOption"
-          value={sortOption}
-          onChange={(e) => handleSortChange(e)}
-        >
-          <option value="latest">Latest</option>
-          <option value="upvoted">Most Upvoted</option>
-        </select>
+    <div className="main">
+      <h3 className="heading">MyForum</h3>
+      <div className="container">
+        <div className="sidebar">
+          <SideBar />
+        </div>
+        <div className="posts">
+          <h3>Latest Post</h3>
+          <div className="post-card">
+            {console.log(sortedPosts)}
+            {showSort ?(
+              <div className="post-card-content">
+                {sortedPosts.map((post) => (<Post key={post.postId} post={post} />
+                ))}
+              </div>
+            ) : <UserFeed/>}
+          </div>
+        </div>
+        <div className="sorting-options">
+          <label htmlFor="sortOption">Sort By: </label>
+          <select
+            id="sortOption"
+            value={sortOption}
+            onChange={(e) => handleSortChange(e)}
+          >
+            <option value="latest">Latest</option>
+            <option value="upvoted">Most Upvoted</option>
+          </select>
+        </div>
       </div>
     </div>
   );

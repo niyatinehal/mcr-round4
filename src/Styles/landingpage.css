@@ -1,5 +1,10 @@
 /* styles.css */
 
+.heading{
+    text-align: left;
+    padding-left:5rem
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -12,7 +17,7 @@
 }
 
 .posts {
-  flex: 1; /* Fill remaining space in the center */
+  flex: 1;
   padding: 20px;
 }
 
@@ -20,6 +25,20 @@
   flex: 0 0 200px; /* Sorting options width */
   background-color: #f2f2f2;
   padding: 20px;
+}
+
+/* styles.css */
+
+.post-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Add any additional styling as per your requirements */
