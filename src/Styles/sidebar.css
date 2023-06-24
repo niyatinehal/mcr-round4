@@ -1,0 +1,22 @@
+/* styles.css */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+}
+
+.sidebar .menu-item {
+  margin-bottom: 10px;
+}
+
+.sidebar .user-profile {
+  margin-top: auto;
+}
+
+/* Add any additional styling as per your requirements */

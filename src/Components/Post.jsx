@@ -27,7 +27,7 @@ const Post = ({ post }) => {
     setShow(!show);
     dispatch({ type: 'SHOW_COMMENTS', postId: post.postId });
   };
-  console.log(post.upvotes-post.downvotes)
+  console.log(post)
 
   return (
     <div>
