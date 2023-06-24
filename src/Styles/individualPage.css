@@ -1,0 +1,21 @@
+/* styles.css */
+.individual-posts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.individual-post-card{
+    display: flex;
+  width: 50%;
+  align-items: center;
+  text-align: left;
+}
+
+.function-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

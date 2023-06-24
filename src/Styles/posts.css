@@ -1,5 +1,34 @@
 /* styles.css */
 
+.heading{
+    text-align: left;
+    padding-left:5rem
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar {
+  flex: 0 0 200px; /* Sidebar width */
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.posts {
+  flex: 1;
+  padding: 20px;
+}
+
+.sorting-options {
+  flex: 0 0 200px; /* Sorting options width */
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* ------------------- */
+
 .posts{
     background-color: #f2f2f2;
 }

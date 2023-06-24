@@ -19,7 +19,7 @@ export const LandingPage = () => {
 
   const sortedPosts = [...forumData.posts];
   if (sortOption === "latest") {
-    sortedPosts.sort((a, b) => b.upvotes - a.upvotes);
+     sortedPosts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
   } else if (sortOption === "upvoted") {
     sortedPosts.sort((a, b) => b.upvotes - a.upvotes);
   }
@@ -34,7 +34,6 @@ export const LandingPage = () => {
         <div className="posts">
           <h3>Latest Post</h3>
           <div className="post-card">
-            {console.log(sortedPosts)}
             {showSort ?(
               <div className="post-card-content">
                 {sortedPosts.map((post) => (<Post key={post.postId} post={post} />
