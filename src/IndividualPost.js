@@ -51,6 +51,7 @@ export const IndividualPost = () => {
           <div className="post-container">
             <p>
               Posted by <strong>{post.username}</strong>
+             {" "} {new Date(post.createdAt).getMinutes()} mins
             </p>
             <h2>{post.post}</h2>
             <div className="tags">
@@ -87,7 +88,7 @@ export const IndividualPost = () => {
         </div>
 
         <div className="comment-container">
-          <p>Created At: {new Date(post.createdAt).getTime}</p>
+          
           <h3>Comments</h3>
           {post.comments.length === 0 ? (
             <p>No comments yet</p>
